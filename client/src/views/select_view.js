@@ -1,7 +1,10 @@
 import PubSub from '../helpers/pub_sub.js';
 
-const SelectView = function (element) {
-  this.element = element;
+class SelectView {
+  element;
+  constructor(element) {
+    this.element = element;
+  }
 };
 
 SelectView.prototype.bindEvents = function () {
