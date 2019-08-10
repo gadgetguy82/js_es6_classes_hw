@@ -1,7 +1,6 @@
 import PubSub from '../helpers/pub_sub.js';
 
 const InstrumentFamilies = class {
-  data;
   constructor(data) {
     this.data = data;
   }

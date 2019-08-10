@@ -1,7 +1,6 @@
 import PubSub from '../helpers/pub_sub.js';
 
 class InstrumentFamilyView {
-  container;
   constructor(container) {
     this.container = container;
   }

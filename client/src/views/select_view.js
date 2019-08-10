@@ -1,9 +1,9 @@
 import PubSub from '../helpers/pub_sub.js';
 
 class SelectView {
-  element;
   constructor(element) {
     this.element = element;
+    console.log("hi");
   }
 };
 
