@@ -1,7 +1,10 @@
 import PubSub from '../helpers/pub_sub.js';
 
-const InstrumentFamilyView = function (container) {
-  this.container = container;
+class InstrumentFamilyView {
+  container;
+  constructor(container) {
+    this.container = container;
+  }
 };
 
 InstrumentFamilyView.prototype.bindEvents = function () {
