@@ -1,7 +1,10 @@
 import PubSub from '../helpers/pub_sub.js';
 
-const InstrumentFamilies = function (data) {
-  this.data = data;
+const InstrumentFamilies = class {
+  data;
+  constructor(data) {
+    this.data = data;
+  }
 };
 
 InstrumentFamilies.prototype.bindEvents = function () {
