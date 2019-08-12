@@ -3,11 +3,10 @@ import PubSub from '../helpers/pub_sub.js';
 class SelectView {
   constructor(element) {
     this.element = element;
-    console.log("hi");
   }
 };
 
-bindEvents() {
+SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:data-ready', (evt) => {
     const allInstrumentFamilies = evt.detail;
     this.populate(allInstrumentFamilies);
@@ -19,7 +18,7 @@ bindEvents() {
   });
 };
 
-populate(instrumentFamilyData) {
+SelectView.prototype.populate = function (instrumentFamilyData) {
   instrumentFamilyData.forEach((familiy, index) => {
     const option = document.createElement('option');
     option.textContent = familiy.name;

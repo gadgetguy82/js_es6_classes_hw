@@ -6,7 +6,7 @@ const InstrumentFamilies = class {
   }
 };
 
-bindEvents() {
+InstrumentFamilies.prototype.bindEvents = function () {
   PubSub.publish('InstrumentFamilies:data-ready', this.data);
 
   PubSub.subscribe('SelectView:change', (evt) => {
@@ -15,7 +15,7 @@ bindEvents() {
   });
 };
 
-publishFamilyDetail(selectedIndex) {
+InstrumentFamilies.prototype.publishFamilyDetail = function (selectedIndex) {
   const selectedFamily = this.data[selectedIndex];
   PubSub.publish('InstrumentFamilies:selected-family-ready', selectedFamily)
 };

@@ -6,14 +6,14 @@ class InstrumentFamilyView {
   }
 };
 
-bindEvents() {
+InstrumentFamilyView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:selected-family-ready', (evt) => {
     const instrumentFamily = evt.detail;
     this.render(instrumentFamily);
   });
 };
 
-render(family) {
+InstrumentFamilyView.prototype.render = function (family) {
   this.container.innerHTML = '';
 
   const {name, description, instruments} = family;
@@ -31,13 +31,13 @@ render(family) {
   this.container.appendChild(instrumentList);
 };
 
-createElement(elementType, text) {
+InstrumentFamilyView.prototype.createElement = function (elementType, text) {
   const element = document.createElement(elementType);
   element.textContent = text;
   return element;
 };
 
-createInstrumentList(instruments) {
+InstrumentFamilyView.prototype.createInstrumentList = function (instruments) {
   const list = document.createElement('ul');
 
   instruments.forEach((instrument) => {
