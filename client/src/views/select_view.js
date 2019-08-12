@@ -7,7 +7,7 @@ class SelectView {
   }
 };
 
-SelectView.prototype.bindEvents = function () {
+bindEvents() {
   PubSub.subscribe('InstrumentFamilies:data-ready', (evt) => {
     const allInstrumentFamilies = evt.detail;
     this.populate(allInstrumentFamilies);
@@ -19,7 +19,7 @@ SelectView.prototype.bindEvents = function () {
   });
 };
 
-SelectView.prototype.populate = function (instrumentFamilyData) {
+populate(instrumentFamilyData) {
   instrumentFamilyData.forEach((familiy, index) => {
     const option = document.createElement('option');
     option.textContent = familiy.name;
